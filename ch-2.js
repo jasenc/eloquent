@@ -30,7 +30,7 @@ function triangleLoop() {
     console.log(string);
   }
   console.log("");
-};
+}
 
 triangleLoop();
 
@@ -55,7 +55,7 @@ function fizzBuzz() {
     }
   }
   console.log("");
-};
+}
 
 fizzBuzz();
 
@@ -69,7 +69,7 @@ is either a space or a “#” character. The characters should form a chess boa
 
 function chessBoard(size) {
   console.log("Chess Board");
-  if (size % 2 !== 0) console.log("This is going to be a whacky, uneven, chess board!")
+  if (size % 2 !== 0) console.log("This is going to be a whacky, uneven, chess board!");
   string = "";
   for (var i = 1; i <= size; i ++) {
     for (var j = 1; j <= size; j++) {
@@ -80,6 +80,6 @@ function chessBoard(size) {
     string += "\n";
   }
   console.log(string);
-};
+}
 
 chessBoard(8);
