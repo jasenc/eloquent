@@ -1,3 +1,12 @@
+/*
+Eloquent JavaScript
+Chapter 2 Solutions
+
+Jasen Carroll
+Sept 25, 2015
+*/
+
+
 /* Looping a Triangle:
 
 Write a loop that makes seven calls to console.log to output the following
@@ -13,7 +22,7 @@ triangle:
 
 */
 
-var triangleLoop = function() {
+function triangleLoop() {
   console.log("Looping a Triangle");
   string = "";
   for (var i = 0; i < 7; i++) {
@@ -23,7 +32,7 @@ var triangleLoop = function() {
   console.log("");
 };
 
-//triangleLoop();
+triangleLoop();
 
 /* FizzBuzz
 
@@ -34,7 +43,7 @@ numbers divisable by both 3 and 5 print "FizzBuzz".
 
 */
 
-var fizzBuzz = function() {
+function fizzBuzz() {
   console.log("FizzBuzz");
   for (var i = 1; i <= 100; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
@@ -48,7 +57,7 @@ var fizzBuzz = function() {
   console.log("");
 };
 
-//fizzBuzz();
+fizzBuzz();
 
 /* Chess Board
 
@@ -58,9 +67,9 @@ is either a space or a “#” character. The characters should form a chess boa
 
 */
 
-var chessBoard = function(size) {
+function chessBoard(size) {
   console.log("Chess Board");
-  if (size % 2 !== 0) console.log("This is going to be a whacky, uneven, chessboard!")
+  if (size % 2 !== 0) console.log("This is going to be a whacky, uneven, chess board!")
   string = "";
   for (var i = 1; i <= size; i ++) {
     for (var j = 1; j <= size; j++) {
