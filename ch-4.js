@@ -1,6 +1,7 @@
 /*
 Eloquent JavaScript
-Chapter 3 Solutions
+Chapter 4 Solutions
+Data Structures: Objects and Arrays
 
 Jasen Carroll
 Sept 28, 2015

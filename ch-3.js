@@ -1,6 +1,7 @@
 /*
 Eloquent JavaScript
 Chapter 3 Solutions
+Functions
 
 Jasen Carroll
 Sept 25, 2015

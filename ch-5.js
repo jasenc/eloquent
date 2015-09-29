@@ -1,6 +1,7 @@
 /*
 Eloquent JavaScript
-Chapter 3 Solutions
+Chapter 5 Solutions
+Higher-order Functions
 
 Jasen Carroll
 Sept 28, 2015

@@ -1,6 +1,7 @@
 /*
 Eloquent JavaScript
 Chapter 2 Solutions
+Program Structure
 
 Jasen Carroll
 Sept 25, 2015
