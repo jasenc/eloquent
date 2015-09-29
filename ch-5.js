@@ -8,7 +8,7 @@ Sept 28, 2015
 */
 
 // Import data used in chapter 5.
-var ancestryFile = require('./ancestry');
+var ancestryFile = require('./data/ancestry');
 var ancestry = ancestryFile.ancestry;
 
 /* Flattening:
