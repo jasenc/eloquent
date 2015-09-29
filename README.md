@@ -1,18 +1,20 @@
 # Eloquent JavaScript
 
 Over the next few weeks I'll be building out this repository. My intent
-is to create a `file.js` for each chapter and project. Eloquent JavaScript
-has a soft introduction to the approaches of a CS book, then goes over the
-unique aspects of JavaScript as a client side language.
+is to create a `file.js` for each chapter and project. I chose to work through
+Eloquent JavaScript because of it's approach, there are more chapters spent on
+general computer science than actual web development.
 
-For now I recommend utilizing these notes on the server side project, utilizing
-Node, as that is the way it is being developed.
+I'll be developing my solutions for each chapter locally, using Node. Some
+chapter problems are dependent on data in accompanying files. Because of
+this, if you are to clone this repository and test my solutions, I recommend
+doing so using Node.
 
 ## Running Locally
 
-Install Node, if you're using OS X and have [Homebrew][1] installed: `brew
-install node`. To review a particular file, simply type `node file_to_test.js`
-in to your terminal.
+Install [Node][1], this can be done from their website. Alternatively if you're
+on OS X and have [Homebrew][2] installed: `brew install node`. To review a
+particular file, simply type `node file_to_test.js` in to your terminal.
 
 ## Table Of Contents
 
@@ -46,4 +48,5 @@ jasen.c@icloud.com
 Sept 20th, 2015
 
 
-[1]: http://brew.sh/
+[1]: https://nodejs.org/
+[2]: http://brew.sh/
