@@ -66,3 +66,106 @@ console.log("#### Mother-child Age Difference ####");
 console.log("The correct answer is: 31.2");
 console.log("My returned answer is: " + average(momAges).toFixed(1));
 console.log("");
+
+/* Historical Life Expectancy
+
+Compute and output the average age of the people in the ancestry data set per
+century. A person is assigned to a century by taking their year of death,
+dividing it by 100, and rounding it up, as in Math.ceil(person.died / 100).
+
+*/
+
+// This is a sweet little function...
+function averageLifeExpectancy(array) {
+  // Let's create an object to hold all of our information.
+  var centuryGroups = {};
+  // For each person in our array,
+  array.forEach(function(person){
+    // capture the century they died in,
+    century = Math.ceil(person.died/100);
+    // as well as their age.
+    age = person.died - person.born;
+    // If our object doesn't have that century as a key yet,
+    if (!(century in centuryGroups)) {
+      // create a key with that century as an empty array.
+      centuryGroups[century] = [];
+    }
+    // Push the age of that individual person to our array representing the
+    // ages of people who died in that century.
+    centuryGroups[century].push(age);
+  });
+  // Since our function name is averageLifeExpectancy, we'll need to get the
+  // average of each century. Each array can be accessed by accessing each key
+  // of our data object.
+  for (var key in centuryGroups) {
+    // Set each array equal to the average of itself.
+    // Note: This average function can be seen above on line 41.
+    centuryGroups[key] = average(centuryGroups[key]);
+  }
+  // It's a lot more eloquent looking without the comments though...
+  return centuryGroups;
+}
+
+var providedAnswers = {
+  16: 43.5,
+  17: 51.2,
+  18: 52.8,
+  19: 54.8,
+  20: 84.7,
+  21: 94
+};
+
+var myAnswers = averageLifeExpectancy(ancestry);
+
+console.log("#### Historical Life Expectancy ####");
+console.log("Provided Answers:");
+for (var key in providedAnswers) {
+  console.log(key + ": " + providedAnswers[key]);
+}
+console.log("");
+console.log("My Answers:");
+for (var key in myAnswers) {
+  console.log(key + ": " + myAnswers[key].toFixed(1));
+}
+console.log("");
+
+/* Every And Then Some
+
+Rewrite the methods 'every' and 'some' as functions that accept an array as
+the first function as opposed to the method.
+
+*/
+function divisable3(item) {
+  if (item % 3 === 0) return true;
+  else return false;
+}
+
+function every(array, test) {
+  var passed = [];
+  for (var i = 0; i < array.length; i++) {
+    passed.push(test(array[i]));
+  }
+  for (test in passed) {
+    if (passed[test] === false) return false;
+  }
+  return true;
+}
+
+function some(array, test) {
+  var passed = [];
+  for (var i = 0; i < array.length; i++) {
+    passed.push(test(array[i]));
+  }
+  for (test in passed) {
+    if (passed[test] === true) return true;
+  }
+  return false;
+}
+
+var everySomeArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+
+console.log("#### Every And Then Some ####");
+console.log("array = [" + everySomeArray + "]");
+console.log("Is every item in the array divisable by three? " + every(everySomeArray, divisable3));
+console.log("Are some items in the array divisable by three? " + some(everySomeArray, divisable3));
