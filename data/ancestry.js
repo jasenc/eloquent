@@ -1,6 +1,6 @@
 /*
 Eloquent JavaScript
-Chapter 3 Solutions
+Chapter 5 Data
 
 Jasen Carroll
 Sept 28, 2015
