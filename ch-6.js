@@ -7,10 +7,7 @@ Jasen Carroll
 Oct 1, 2015
 */
 
-// Imports of Data and necessary functions from Chapter 6
-
-var mountainsFile = require('./data/mountains');
-var mountains = mountainsFile.mountains;
+// Including necessary functions from Chapter 6
 
 function repeat(string, times) {
   var result = "";
@@ -121,3 +118,22 @@ var sc = new StretchCell(new TextCell("abc"), 1, 2);
 console.log(sc.minWidth());
 console.log(sc.minHeight());
 console.log(sc.draw(3, 2));
+
+/* Sequence Interface:
+
+Design an interface that abstracts iteration over a collection of values. An
+object that provides this interface represents a sequence, and the interface
+must somehow make it possible for code that uses such an object to iterate over
+the sequence, looking at the element values it is made up of and having some way
+to find out when the end of the sequence is reached.
+
+When you have specified your interface, try to write a function logFive that
+takes a sequence object and calls console.log on its first five elements—or
+fewer, if the sequence has fewer than five elements.
+
+Then implement an object type ArraySeq that wraps an array and allows iteration
+over the array using the interface you designed. Implement another object type
+RangeSeq that iterates over a range of integers (taking from and to arguments
+to its constructor) instead.
+
+*/
