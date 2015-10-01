@@ -12,44 +12,6 @@ Oct 1, 2015
 var mountainsFile = require('./data/mountains');
 var mountains = mountainsFile.mountains;
 
-function rowHeights(rows) {
-  return rows.map(function(row) {
-    return row.reduce(function(max, cell) {
-      return Math.max(max, cell.minHeight());
-    }, 0);
-  });
-}
-
-function colWidths(rows) {
-  return rows[0].map(function(_, i) {
-    return rows.reduce(function(max, row) {
-      return Math.max(max, row[i].minWidth());
-    }, 0);
-  });
-}
-
-function drawTable(rows) {
-  var heights = rowHeights(rows);
-  var widths = colWidths(rows);
-
-  function drawLine(blocks, lineNo) {
-    return blocks.map(function(block) {
-      return block[lineNo];
-    }).join(" ");
-  }
-
-  function drawRow(row, rowNum) {
-    var blocks = row.map(function(cell, colNum) {
-      return cell.draw(widths[colNum], heights[rowNum]);
-    });
-    return blocks[0].map(function(_, lineNo) {
-      return drawLine(blocks, lineNo);
-    }).join("\n");
-  }
-
-  return rows.map(drawRow).join("\n");
-}
-
 function repeat(string, times) {
   var result = "";
   for (var i = 0; i < times; i++)
@@ -76,33 +38,6 @@ TextCell.prototype.draw = function(width, height) {
   }
   return result;
 };
-
-function UnderlinedCell(inner) {
-  this.inner = inner;
-}
-UnderlinedCell.prototype.minWidth = function() {
-  return this.inner.minWidth();
-};
-UnderlinedCell.prototype.minHeight = function() {
-  return this.inner.minHeight() + 1;
-};
-UnderlinedCell.prototype.draw = function(width, height) {
-  return this.inner.draw(width, height - 1)
-    .concat([repeat("-", width)]);
-};
-
-function dataTable(data) {
-  var keys = Object.keys(data[0]);
-  var headers = keys.map(function(name) {
-    return new UnderlinedCell(new TextCell(name));
-  });
-  var body = data.map(function(row) {
-    return keys.map(function(name) {
-      return new TextCell(String(row[name]));
-    });
-  });
-  return [headers].concat(body);
-}
 
 
 /* A Vector Type:
@@ -163,4 +98,26 @@ smaller.
 
 */
 
-// function StretchCell(inner, )
+function StretchCell(inner, width, height) {
+  this.inner = inner;
+  this.width = width;
+  this.height = height;
+}
+StretchCell.prototype.minWidth = function() {
+  if (this.inner.minWidth() >= this.width) {
+    return this.inner.minWidth();
+  } else return this.width;
+};
+StretchCell.prototype.minHeight = function() {
+  if (this.inner.minHeight() >= this.height) {
+    return this.inner.minHeight();
+  } else return this.height;
+};
+StretchCell.prototype.draw = function() {
+  return this.inner.draw(this.minWidth(), this.minHeight());
+};
+
+var sc = new StretchCell(new TextCell("abc"), 1, 2);
+console.log(sc.minWidth());
+console.log(sc.minHeight());
+console.log(sc.draw(3, 2));
