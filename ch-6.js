@@ -115,9 +115,11 @@ StretchCell.prototype.draw = function() {
 };
 
 var sc = new StretchCell(new TextCell("abc"), 1, 2);
+console.log("#### Another Cell ####");
 console.log(sc.minWidth());
 console.log(sc.minHeight());
 console.log(sc.draw(3, 2));
+console.log("");
 
 /* Sequence Interface:
 
@@ -137,3 +139,47 @@ RangeSeq that iterates over a range of integers (taking from and to arguments
 to its constructor) instead.
 
 */
+
+function ArraySeq(array) {
+  this.array = array;
+  this.place = 0;
+}
+ArraySeq.prototype.end = function() {
+  return this.array.length;
+};
+ArraySeq.prototype.current = function() {
+  console.log(this.array[this.place]);
+};
+ArraySeq.prototype.next = function() {
+  if (this.array[this.place] >= this.array.length) return false;
+  else {
+    this.place += 1;
+    return true;
+  }
+};
+
+function RangeSeq(one, two) {
+  this.array = [];
+  this.place = 0;
+  for (var i = one; i <= two; i++) {
+    this.array.push(i);
+  }
+}
+RangeSeq.prototype = Object.create(ArraySeq.prototype);
+
+function logFive(sequence) {
+  for (var i = 0; i < 5; i++) {
+    sequence.current();
+    //console.log(sequence.current());
+    if (!sequence.next()) break;
+    else sequence.next();
+  }
+}
+
+console.log("#### A Vector Type ####");
+console.log("logFive(new ArraySeq([1, 2])): ");
+logFive(new ArraySeq([1, 2]));
+console.log("");
+console.log("logFive(new RangeSeq(100, 1000)): ");
+logFive(new RangeSeq(100, 1000));
+console.log("");
