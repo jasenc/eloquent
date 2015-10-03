@@ -23,8 +23,8 @@ particular file, simply type `node file_to_test.js` in to your terminal.
 3. [Functions](ch-3.js)
 4. [Data Structures: Objects and Arrays](ch-4.js)
 5. [Higher-order Functions](ch-5.js)
-6. The Secret Life of Objects
-7. Project: Electronic Life
+6. [The Secret Life of Objects](ch-6.js)
+7. [Project: Electronic Life](electronicLife.js)
 8. Bugs and Error Handling
 9. Regular Expressions
 10. Modules
