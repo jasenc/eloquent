@@ -39,5 +39,61 @@ function reliableMultiply(a, b) {
 
 }
 
+console.log("#### A Vector Type ####");
 console.log(reliableMultiply(8, 8));
-// → 64
+console.log("");
+
+/* The Locked Box
+
+Write a function called withBoxUnlocked that takes a function value as argument,
+unlocks the box, runs the function, and then ensures that the box is locked
+again before returning, regardless of whether the argument function returned
+normally or threw an exception.
+
+*/
+
+var box = {
+  locked: true,
+  unlock: function() { this.locked = false; },
+  lock: function() { this.locked = true;  },
+  _content: [],
+  get content() {
+    if (this.locked) throw new Error("Locked!");
+    return this._content;
+  }
+};
+
+function withBoxUnlocked(body) {
+  // Get the locked status of the box
+  var lockedBox = box.locked;
+  // If it is unlocked, run our function.
+  if (!lockedBox) return body;
+
+  // Otherwise unlock the box.
+  box.unlock();
+  // Try running our function.
+  try {
+    return body();
+  } finally {
+    // And make sure we lock the box again.
+    box.lock();
+  }
+}
+
+console.log("#### The Locked Box ####");
+console.log("Let's put some gold in the lock box.");
+withBoxUnlocked(function() {
+  box.content.push("gold piece");
+  console.log(box.content);
+});
+
+
+try {
+  withBoxUnlocked(function() {
+    throw new Error("Pirates on the horizon! Is the box locked?!");
+  });
+} catch (e) {
+  console.log("Oh no! ", e);
+}
+console.log(box.locked);
+// → true
