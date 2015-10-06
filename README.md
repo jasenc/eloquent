@@ -1,9 +1,8 @@
 # Eloquent JavaScript
 
-Over the next few weeks I'll be building out this repository. My intent
-is to create a `file.js` for each chapter and project. I chose to work through
-Eloquent JavaScript because of it's approach, there are more chapters spent on
-general computer science than actual web development.
+To further perfect my JavaScript skill set I chose to work through
+Eloquent JavaScript. Though most of the book will be a review, I enjoy the
+computer science approach maintained by the first half of the book.
 
 I'll be developing my solutions for each chapter locally, using Node. Some
 chapter problems are dependent on data in accompanying files. Because of
@@ -25,7 +24,7 @@ particular file, simply type `node file_to_test.js` in to your terminal.
 5. [Higher-order Functions](ch-5.js)
 6. [The Secret Life of Objects](ch-6.js)
 7. Project: Electronic Life (no solutions to present, require's sandbox)
-8. Bugs and Error Handling
+8. [Bugs and Error Handling](ch-8.js)
 9. Regular Expressions
 10. Modules
 11. Project: A Programming Language
