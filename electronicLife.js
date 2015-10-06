@@ -188,10 +188,6 @@ View.prototype.find = function(ch) {
 function Wall() {}
 
 var world = new World(plan, {"#": Wall, "o": BouncingCritter});
-for (var i = 0; i < 5; i++) {
-  world.turn();
-  console.log(world.toString());
-}
 
 // Unforuntately for running this on Node we won't get to animate things...
 
@@ -320,3 +316,23 @@ var valley = new LifelikeWorld(
    "O": PlantEater,
    "*": Plant}
 );
+
+// Artificial Stupidity
+
+strings = [
+  "Instead of adding functionality that you can't check we'll discuss.",
+  "One, could set a limit to how many plants must be available to eating.",
+  "Two, could check if any plants are nearby and if so immediately run the eat condition.",
+  "Three, could increase the amount of energy needed to reproduce.",
+  "This largely involves creating a new object similar to PlantEater."
+];
+
+console.log(" #### Artificial Stupidity #### ");
+for (var string in strings) {
+  console.log(strings[string]);
+}
+console.log("");
+
+console.log(" #### Pedators #### ");
+console.log("This largely involves creating a new object similar to PlantEater.");
+console.log("However this time we are making a critter eater!");
