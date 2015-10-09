@@ -25,8 +25,8 @@ particular file, simply type `node file_to_test.js` in to your terminal.
 6. [The Secret Life of Objects](ch-6.js)
 7. Project: Electronic Life (no solutions to present, require's sandbox)
 8. [Bugs and Error Handling](ch-8.js)
-9. Regular Expressions
-10. Modules
+9. [Regular Expressions](ch-9.js)
+10. [Modules](ch-10.js)
 11. Project: A Programming Language
 12. JavaScript and the Browser
 13. The Document Object Model
