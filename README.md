@@ -17,7 +17,7 @@ particular file, simply type `node file_to_test.js` in to your terminal.
 
 ## Table Of Contents
 
-1. Values, Types, and Operators (no solutions to present)
+1. Values, Types, and Operators - No Problems
 2. [Program Structure](ch-2.js)
 3. [Functions](ch-3.js)
 4. [Data Structures: Objects and Arrays](ch-4.js)
@@ -28,7 +28,7 @@ particular file, simply type `node file_to_test.js` in to your terminal.
 9. [Regular Expressions](ch-9.js)
 10. [Modules](ch-10.js)
 11. Project: A Programming Language
-12. JavaScript and the Browser
+12. JavaScript and the Browser - No Problems
 13. The Document Object Model
 14. Handling Events
 15. Project: A Platform Game
