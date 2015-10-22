@@ -71,7 +71,7 @@ console.log("");
 
 Compute and output the average age of the people in the ancestry data set per
 century. A person is assigned to a century by taking their year of death,
-dividing it by 100, and rounding it up, as in Math.ceil(person.died / 100).
+dividing it by 100, and rounding it up.
 
 */
 
@@ -80,18 +80,18 @@ function averageLifeExpectancy(array) {
   // Let's create an object to hold all of our information.
   var centuryGroups = {};
   // For each person in our array,
-  array.forEach(function(person){
-    // capture the century they died in,
-    century = Math.ceil(person.died/100);
+  array.forEach(function(ancestor){
+    // capture the century they passed away in,
+    century = Math.ceil(ancestor.death/100);
     // as well as their age.
-    age = person.died - person.born;
+    age = ancestor.death - ancestor.born;
     // If our object doesn't have that century as a key yet,
     if (!(century in centuryGroups)) {
       // create a key with that century as an empty array.
       centuryGroups[century] = [];
     }
-    // Push the age of that individual person to our array representing the
-    // ages of people who died in that century.
+    // Push the age of that individual ancestor to our array representing the
+    // ages of people who passed away in that century.
     centuryGroups[century].push(age);
   });
   // Since our function name is averageLifeExpectancy, we'll need to get the
