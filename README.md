@@ -28,16 +28,6 @@ particular file, simply type `node file_to_test.js` in to your terminal.
 9. [Regular Expressions](ch-9.js)
 10. [Modules](ch-10.js)
 11. Project: A Programming Language
-12. JavaScript and the Browser - No Problems
-13. The Document Object Model
-14. Handling Events
-15. Project: A Platform Game
-16. Drawing on Canvas
-17. HTTP
-18. Forms and Form Fields
-19. Project: A Paint Program
-20. Node.js
-21. Project: Skill-Sharing Website
 
 
 ## Author
